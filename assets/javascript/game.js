@@ -3,56 +3,47 @@ for (var i = 0; i < animals.length; i++) {
     console.log(animals[i]);
 }
 
-var animals = animals[Math.floor(Math.random() * words.length)];
+function word() {
+    word.list = [
+        "zebra",
+        "lion",
+        "giraffe",
+        "elephant",
+        "rhino"
+    ]
 
-var answer = [];
-for (var i =0; i < word.length; i++) {
-    answer[i] = "_";
+    word.random = word.list[Math.floor(Math.random() * word.list.length)];
+    word.wrongGuesses = [];
+    word.errors = 0;
+    word.correctGuesses = [];
+    for (var i = 0; i < word.random.length; i++) {
+        word.correctGuesses[i] = (false);
+    }
 }
 
-var guess = ["_", "_", "_", "_", "_"];
-    document.getElementById().innerHTML
+function alphabet() {
+    letters = "abcdefghijklmnopqrstuvwxyz"
+}
 
+document.onkeyup = function(event) {
 
-
-var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-        't', 'u', 'v', 'w', 'x', 'y', 'z'];
-
-          // Create geusses ul
-result = function () {
-    wordHolder = document.getElementById('blank');
-    correct = document.createElement('ul');
-
-    for (var i = 0; i < word.length; i++) {
-        correct.setAttribute('id', 'my-word');
-        guess = document.createElement('li');
-         guess.setAttribute('class', 'guess');
-        if (word[i] === "-") {
-            guess.innerHTML = "-";
-            space = 1;
-        } 
-        else {
-            guess.innerHTML = "_";
+    var guess = event.key;
+    var zebra = ["z", "e", "b", "r", "a"];
+    for (var i = 0; i < zebra.length; i++) {
+        if (zebra[i].charAt(0) === "z") {
+        console.log(zebra[i]);
         }
-
-        geusses.push(guess);
-        wordHolder.appendChild(correct);
-        correct.appendChild(guess);
+        else if (zebra[i].charAt(1) === "e") {
+        console.log(zebra[i]);
+        }
+        else if (zebra[i].charAt(2) === "b") {
+        console.log(zebra[i]);
+        }
+        else if (zebra[i].charAt(3) === "r") {
+        console.log(zebra[i]);
+        }
+        else if (zebra[i].charAt(4) === "a") {
+        console.log(zebra[i]);
+        }
     }
-}
-
-    var lives ;             // Lives
-
-  // Show lives
-  comments = function () {
-    showLives.innerHTML = "You have " + lives + " tries left";
-    if (lives < 1) {
-      showLives.innerHTML = "Game Over";
-    }
-    for (var i = 0; i < geusses.length; i++) {
-      if (counter + space === geusses.length) {
-        showLives.innerHTML = "You Win!";
-      }
-    }
-  }
+};
