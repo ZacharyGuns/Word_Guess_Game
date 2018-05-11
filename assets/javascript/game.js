@@ -1,30 +1,71 @@
-var animals = ["Zebra", "Lion", "Giraffe", "Elephant", "Rhino"];
+// Variables to store data
+
+var button = document.getElementById("newGameBtn");
+
+var animals = [
+    "zebra", 
+    "lion", 
+    "giraffe", 
+    "elephant", 
+    "rhino"
+];
+
+
+
+var lives = 5;
+var guess;
+var answer = [];
+var wrongLetters = [];
+var correctLetters = [];
+
+
+/*
+alert(answer.join(" "));
+
+*/
+
+//===========================================================================================
+// Page text
+
+document.getElementById("livesRemaining").innerHTML = "you have " + lives + " tries remaining";
+
+document.getElementById("wrongLetters").innerHTML = [];
+
+//===========================================================================================
+// Functions to call on variables
+
+button.onclick = function() {
+    var element = document.getElementById("wordToGuess");
+    element.innerHTML = (animals[Math.floor(Math.random() * animals.length)]);
+};
+
 for (var i = 0; i < animals.length; i++) {
-    console.log(animals[i]);
+    answer[i] = "_ ";
 }
 
-function word() {
-    word.list = [
-        "zebra",
-        "lion",
-        "giraffe",
-        "elephant",
-        "rhino"
-    ]
+/* My first working Javascript code!
+button.onclick = function() {
+    alert(animals[Math.floor(Math.random() * animals.length)]);
+};
+*/
 
-    word.random = word.list[Math.floor(Math.random() * word.list.length)];
-    word.wrongGuesses = [];
-    word.errors = 0;
-    word.correctGuesses = [];
-    for (var i = 0; i < word.random.length; i++) {
-        word.correctGuesses[i] = (false);
+//===========================================================================================
+// Sh!t I dont know what to do with
+
+/*
+var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+onkeyup = function(event) {
+    var userGuess = event.key;
+    if {
+        lives--;
+    }
+    else {
+l       lives--;
     }
 }
+*/
 
-function alphabet() {
-    letters = "abcdefghijklmnopqrstuvwxyz"
-}
-
+/*
 document.onkeyup = function(event) {
 
     var guess = event.key;
@@ -47,3 +88,4 @@ document.onkeyup = function(event) {
         }
     }
 };
+*/
